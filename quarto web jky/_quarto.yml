@@ -1,0 +1,69 @@
+project:
+  type: website
+
+website:
+  title: "Jiang Kunyi"
+  open-graph: true
+  site-url: https://wisejky.netlify.app/
+  search:
+    location: sidebar
+    type: overlay
+    copy-button: true
+  navbar:
+    title: "Jiang Kunyi"
+    logo: /images/jky.jpg
+    pinned: true
+    collapse-below: lg
+  sidebar:
+    style: docked  
+    collapse-level: 1
+    background: light
+    pinned: true
+    tools:
+      - icon: envelope fill
+        href: mailto:wisejky@stu.xmu.edu.cn
+        text: "Email"
+    contents:
+      - section: "Projects"
+        href: projects/index.qmd
+        contents:
+          - text: "PharmAccess"
+            href: projects/pharmaccess.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "Book an appointment"
+        href: appointment/index.qmd
+        
+  page-footer:
+    left: |
+      <br>
+      Copyright &copy; 2024 Jiang Kunyi<br>
+      This website was created with 
+      [![](/images/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org)
+    center: |
+      <br>
+      __Email:__<br>
+      [wisejky@stu.xmu.edu.cn](mailto:wisejky@stu.xmu.edu.cn) <br>
+    right: |
+      <br>
+      __Postal address:__<br>
+      Wang Yanan lnstitute for Studies in Economics(WISE), <br>
+      Economics Building, Xiamen University, Xiamen, 361005 China
+ 
+
+      
+format:
+  html:
+    page-layout: full
+    date-format: "MMM YYYY"
+    theme:
+      light:
+        - flatly
+        - mozilla.scss
+    css: styles.css
+
+
+editor: visual
+
+execute: 
+  freeze: auto

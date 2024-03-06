@@ -1,0 +1,158 @@
+---
+sidebar: true
+date: last-modified
+format:
+  html:
+    page-layout: article
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    toc-location: right
+    toc-expand: true
+    smooth-scroll: true
+  #pdf: 
+    #page-layout: article
+    #toc: true
+  #docx: default
+
+---
+
+```{=html}
+<!---
+ ::: {.container-fluid} 
+--->
+```
+```{=html}
+<div class="p-5 mb-4 bg-light rounded-3 bgimg">
+  <br><br><br><br>
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Looking<br>to do more<br>with data and AI?</h1>
+    <!-- <a href="src/calendar.html" class="btn btn-primary btn-lg" type="button">Book an appointment</a> -->
+  </div>
+</div>
+<p class="lead">
+   <small class="text-hero">DATA-CENTRIC AI &emsp; | &emsp; APPLIED AI &emsp; | &emsp; COACHING & MENTORING &emsp; | &emsp; MASTERCLASSES & PUBLIC SPEAKING</small>
+</p>
+<style type="text/css">
+.lead {
+    font-family: "Zilla Slab";
+    text-align: center;
+}
+
+.bgimg {
+  background-image: url('images/jky-removebg-preview.png');
+  Background-size: cover;
+}
+.hero-quote {
+  font-family: "Zilla Slab";
+  font-color: white;
+  color: white;
+}
+
+.fw-bold {
+  /* font-family: "Zilla Slab Highlight"; */
+  font-style: bold !important;
+  color: white !important;
+}
+</style>
+```
+```{=html}
+<!---
+ ::: 
+--->
+```
+## Areas of expertise {#sec-areas-of-expertise}
+
+Explainable AI, physics-informed machine learning, data-centric AI, data architecture, federated learning, knowledge science, data commons.123
+
+## Industry focus {#sec-industry-focus}
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+Healthcare, public sector, OEMs and scale-ups for which data and AI are a core element of their strategy.
+
+## Contact details {#sec-contact-details}

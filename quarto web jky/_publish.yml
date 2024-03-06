@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 9bc84ed4-42c9-4a0c-add9-11d364367a5d
+      url: 'https://wisejky.netlify.app'
