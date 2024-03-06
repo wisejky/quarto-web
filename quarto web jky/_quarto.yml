@@ -5,6 +5,7 @@ website:
   title: "Jiang Kunyi"
   open-graph: true
   site-url: https://wisejky.netlify.app/
+  back-to-top-navigation: false
   search:
     location: sidebar
     type: overlay
@@ -12,13 +13,12 @@ website:
   navbar:
     title: "Jiang Kunyi"
     logo: /images/jky.jpg
-    pinned: true
-    collapse-below: lg
+    pinned: false
+    collapse-below: md
   sidebar:
     style: docked  
     collapse-level: 1
     background: light
-    pinned: true
     tools:
       - icon: envelope fill
         href: mailto:wisejky@stu.xmu.edu.cn
@@ -31,8 +31,8 @@ website:
             href: projects/pharmaccess.qmd
       - text: "Blog"
         href: blog/index.qmd
-      - text: "Book an appointment"
-        href: appointment/index.qmd
+      - text: "Course"
+        href: course/index.qmd
         
   page-footer:
     left: |

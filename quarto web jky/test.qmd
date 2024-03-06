@@ -1,0 +1,43 @@
+---
+title: "test"
+---
+
+> There has been a revival of a hypothesis proposed by Rietz (1988) that the possibility of rare disasters, such as economic depressions or wars, is a major determinant of asset risk premia.
+
+Indeed, Barro (2006) has shown that internationally, disasters have been sufficiently frequent and large to make Rietz’s proposal viable and account for the high risk premium on equities. Additionally, the recent economic crisis has given disaster risk a renewed salience.
+
+The rare disaster hypothesis is almost always formulated with constant severity of disasters. This is useful for thinking about averages but cannot account for some key features of asset markets, such as volatile price-dividend ratios for stocks, volatile bond risk premia, and return predictability.
+
+In this article, I formulate a variable-severity version of the rare disasters hypothesis and investigate the impact of time-varying disaster severity on the prices of stocks and bonds as well as on the predictability of their returns.
+
+I show that many asset puzzles can be qualitatively understood using this model. I then demonstrate that a parsimonious calibration allows one to understand the puzzles quantitatively, provided that real and nominal variables are sufficiently sensitive to disasters (which I argue is plausible below).
+
+The proposed framework allows for a very tractable model of stocks and bonds in which all prices are in closed form. In this setting, the following patterns are not puzzles but emerge naturally when the present model has just two shocks: a real one for stocks and a nominal one for bonds.
+
+| Stock Market: Puzzles about the Aggregates           |                                                                                                                                                        |
+|------------------------------|------------------------------------------|
+| Equity premium puzzle                                | The standard consumption-based model with reasonable relative risk aversion (less than 10) predicts a too low equity premium (Mehra and Prescott 1985) |
+| Risk-free rate puzzle                                | Increasing risk aversion leads to a too high risk-free rate in the standard model (Weil 1989)                                                          |
+| Excess volatility puzzle                             | Stock prices seem more volatile than warranted by a model with a constant discount rate (Shiller 1981)                                                 |
+| Aggregate return predictability                      | Future aggregate stock market returns are partly predicted by price/dividend                                                                           |
+| (P/D) and similar ratios (Campbell and Shiller 1998) |                                                                                                                                                        |
+
+To understand the economics of the model, first consider bonds. Consistent with the empirical evidence reviewed shortly, a disaster leads on average to **a positive jump in inflation** in the model. This has a greater detrimental impact on long-term bonds, so they command a **high risk premium relative to short-term bonds**. This explains *the upward slope of the nominal yield curve*. Next, suppose that the size of the **expected jump** in inflation itself **varies**. Then, the slope of the yield curve will vary and predict excess bond returns. **A high slope will mean-revert** and, thus, ***predicts a drop in the long rate and high returns on long-term bonds.*** This mechanism accounts for many stylized facts on bonds.
+
+The environment follows Rietz (1988) and Barro (2006), and adds a stochastic probability and severity of disasters.
+
+There is a representative agent with utility
+
+$$
+\mathbb{E}_0\left[\sum_{t=0}^\infty{e}^{-\rho{t}}\frac{C_t^{1-\gamma}-1}{1-\gamma}\right], 
+$$
+
+where $γ ≥ 0$ is the coefficient of relative risk aversion and $ρ > 0$ is the rate of time preference.
+
+She receives a consumption endowment $C_t$. At each period $t + 1$, a disaster may happen with a probability $p_t$.
+
+**If a [disaster does *not* happen]{style="color:green;"},** $\frac{C_{t+1}}{C_t} = e^{g_C}$**, where** $g_C$ **is the *normal-time* growth rate of the economy.**
+
+**If a disaster happens,** $\frac{C_{t+1}}{C_t} = e^{g_C}B_{t+1}$**, where** $B_{t+1} > 0$ **is a random variable.**
+
+For instance, if $B_{t+1} = 0.8$, consumption *falls* by 20%. To sum up:
