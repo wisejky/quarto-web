@@ -1,39 +1,70 @@
 project:
   type: website
+  resources:
+    - sources/CV_JKY.pdf
 
 website:
+
   title: "Jiang Kunyi"
   open-graph: true
   site-url: https://wisejky.netlify.app/
   back-to-top-navigation: false
+  page-navigation: true
+  
   search:
-    location: sidebar
+    location: navbar
     type: overlay
     copy-button: true
+  
   navbar:
     title: "Jiang Kunyi"
     logo: /images/jky.jpg
     pinned: false
     collapse-below: md
-  sidebar:
-    style: docked  
-    collapse-level: 1
-    background: light
-    tools:
-      - icon: envelope fill
-        href: mailto:wisejky@stu.xmu.edu.cn
-        text: "Email"
-    contents:
-      - section: "Projects"
+    left: 
+      - text: "Projects"
         href: projects/index.qmd
-        contents:
-          - text: "PharmAccess"
-            href: projects/pharmaccess.qmd
       - text: "Blog"
         href: blog/index.qmd
       - text: "Course"
-        href: course/index.qmd
+        href: course_index.qmd
         
+  #  tools:
+  #    - icon: envelope fill
+  #      href: mailto:wisejky@stu.xmu.edu.cn
+  #      text: "Email"
+
+  sidebar:
+  - id: course
+    title: "Course"
+    style: docked
+    collapse-level: 2
+    background: light
+    contents:
+      - section: "Course"
+        href: course_index.qmd
+        contents:
+          - section: "Nonparametric Econometrics"
+            href: course/Nonparametric Econometrics.qmd
+            contents: "course/Nonpara/*.qmd"
+
+  
+  - id: blog
+    title: "Blog"
+    style: docked
+    collapse-level: 2
+    background: light
+    contents:
+      - blog/index.qmd
+      - text: "Nonparametric Econometrics"
+        href: course/Nonparametric Econometrics.qmd
+        
+        
+    
+      
+ 
+    
+
   page-footer:
     left: |
       <br>
@@ -55,15 +86,20 @@ website:
 format:
   html:
     page-layout: full
-    date-format: "MMM YYYY"
+    date-format: "MMM D, YYYY"
     theme:
       light:
         - flatly
         - mozilla.scss
     css: styles.css
+    toc: true
+    code-copy: hover
 
 
 editor: visual
 
 execute: 
   freeze: auto
+
+filters:
+  - shinylive

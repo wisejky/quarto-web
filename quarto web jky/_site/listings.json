@@ -1,5 +1,16 @@
 [
   {
+    "listing": "/course/Nonparametric Econometrics.html",
+    "items": [
+      "/course/Nonpara/Ch1 One-Sample Methods.html",
+      "/course/Nonpara/Ch1 One-Sample Methodstest.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": []
+  },
+  {
     "listing": "/projects/index.html",
     "items": [
       "/projects/amphia.html",
@@ -10,9 +21,5 @@
       "/projects/roetz-life.html",
       "/projects/sensire.html"
     ]
-  },
-  {
-    "listing": "/blog/index.html",
-    "items": []
   }
 ]

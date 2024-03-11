@@ -1,0 +1,15 @@
+  
+  
+- title: NONPARA
+  subtitle: Create content with markdown 
+  links:
+    - text: Ch1 One-Sample Methods
+      href: ../Nonpara/Ch1 One-Sample Methods.qmd
+
+  
+  
+- title: Authoring
+  subtitle: Create content with markdown 
+  links:
+    - text: Markdown Basics
+      href: ../authoring/markdown-basics.qmd

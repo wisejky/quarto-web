@@ -14,18 +14,14 @@ about:
   # quarto publish netlify
 ---
 
-
-:::{#hero-heading}
-
-Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.
+::: {#hero-heading}
+Welcome to my personal website! I’m **Kunyi Jiang(蒋坤燚)**, a postgraduate student in **Quantitative Economics** at **Xiamen University**’s *Wang Yanan lnstitute for Studies in Economics(WISE)*. My current research interests are in *asset pricing*, *macroeconomics* and *corporate finance*. Feel free to reach me at [wisejky\@stu.xmu.edu.cn](mailto:wisejky@stu.xmu.edu.cn). Check out my <a href="../sources/CV_JKY.pdf" target="_blank">CV</a> for more information about me.
 
 ## Education
 
-University of California, San Diego | San Diego, CA
-PhD in Mathematics | Sept 2011 - June 2015
+Xiamen University, Xiamen, Fujian, China \| M.A. in Economics, Quantitative Economics 
+\| Sept 2022 - June 2025(expected)
 
-Macalester College | St. Paul MA
-B.A in Economics | Sept 2007 - June 2011
+Nankai University, Tianjin, China \| B.A. in Economics, Financial Engineering \| Sept 2018 - June 2022
 
 :::
-

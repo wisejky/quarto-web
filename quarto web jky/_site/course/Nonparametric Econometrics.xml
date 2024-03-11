@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Jiang Kunyi</title>
+<link>https://wisejky.netlify.app/course/Nonparametric Econometrics.html</link>
+<atom:link href="https://wisejky.netlify.app/course/Nonparametric Econometrics.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<image>
+<url>https://wisejky.netlify.app/images/hero_right.png</url>
+<title>Jiang Kunyi</title>
+<link>https://wisejky.netlify.app/course/Nonparametric Econometrics.html</link>
+</image>
+<generator>quarto-1.4.551</generator>
+<lastBuildDate>Mon, 11 Mar 2024 15:43:49 GMT</lastBuildDate>
+<item>
+  <title>Nonparametric Econometrics Ch1</title>
+  <dc:creator>Jiang Kunyi</dc:creator>
+  <link>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methods.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">radius <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span></span></code></pre></div>
+</div>
+<p>The radius of the circle is 5</p>
+<p>This document demonstrates the use of a number of advanced page layout features to produce an attractive and usable document inspired by the Tufte handout style and the use of Tufte’s styles in RMarkdown documents. The Tufte handout style is a style that Edward Tufte uses in his books and handouts. Tufte’s style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography. Quarto<sup>1</sup> supports most of the layout techniques that are used in the Tufte handout style for both HTML and LaTeX/PDF output.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;To learn more, you can read more about <a href="https://www.quarto.org">Quarto</a> or visit <a href="https://www.github.com/quarto-dev/quarto-cli">Quarto’s Github repository</a>.</p></div></div><div class="column-page-right">
+<p><em>R is free software and comes with ABSOLUTELY NO WARRANTY.</em> You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="https://www.gnu.org/licenses/" class="uri">https://www.gnu.org/licenses/</a>.</p>
+</div>
+<div class="sourceCode" id="annotated-cell-2" style="background: #f1f3f5;"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-2-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="annotated-cell-2-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">title</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"An Example Using the Tufte Style"</span></span>
+<span id="annotated-cell-2-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">author</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"John Smith"</span></span>
+<span id="annotated-cell-2-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">format</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="annotated-cell-2-5"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="annotated-cell-2-6"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">grid</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-7" class="code-annotation-target"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">margin-width</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> 350px</span></span>
+<span id="annotated-cell-2-8"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pdf</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> default</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-9" class="code-annotation-target"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">reference-location</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> margin</span></span>
+<span id="annotated-cell-2-10"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">citation-location</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> margin</span></span>
+<span id="annotated-cell-2-11"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="1">Increases the width of the margin to make more room for sidenotes and margin figures (HTML only).</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="9,10" data-code-annotation="2">Places footnotes and cited sources in the margin. Other layout options (for example placing a figure in the margin) will be set per element in examples below.</span>
+</dd>
+</dl>
+<section id="one-sample-methods" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> One-Sample Methods</h1>
+<p>The nonparametric tests described in this course are often called distribution-free test procedures because the validity of the tests does not depend on the underlying model (distribution) assumption. In other words, the significance level of the tests does not depend on the distributional assumptions.</p>
+<ul>
+<li><p>One-sample data: consists of observations from a single population.</p></li>
+<li><p>Primary interest: make inference about the location/center of the single distribution.</p></li>
+<li><p>Two popular measurements of location/center</p>
+<ul>
+<li><p>Mean: sensitive to outliers</p></li>
+<li><p>Median: robust against outliers</p></li>
+<li><p>Mean and Median are the same for symmetric distributions.</p></li>
+</ul></li>
+</ul>
+<section id="parametric-methods" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="parametric-methods"><span class="header-section-number">1.1</span> Parametric Methods</h2>
+<section id="one-sample-z-test-see-chapter-0.3.1" class="level3 page-columns page-full" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="one-sample-z-test-see-chapter-0.3.1"><span class="header-section-number">1.1.1</span> One-sample Z-test (see Chapter 0.3.1)</h3>
+<ul>
+<li>Assumption: The random sample <img src="https://latex.codecogs.com/png.latex?X_1,...X_n"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> from <img src="https://latex.codecogs.com/png.latex?N(%5Cmu%20,%5Csigma%5E2)">, where <img src="https://latex.codecogs.com/png.latex?%5Cmu"> is the unknown mean, and <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2"> is the variance and is known.</li>
+<li>Null hypothesis <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Cmu%20=%20%5Cmu_0"> (the distribution is centered at <img src="https://latex.codecogs.com/png.latex?%5Cmu_0">~, a prespecified null value).</li>
+<li>Significance level <img src="https://latex.codecogs.com/png.latex?%5Calpha">, <em>i.e.</em> we want to control <img src="https://latex.codecogs.com/png.latex?Type~I~error%20=%20%20P(Reject~H_0~%7C~H_0~is~True)%20%5Cle%20%5Calpha."></li>
+<li><strong>Test statistic</strong> <img src="https://latex.codecogs.com/png.latex?Z%20=%5Cfrac%7B%5Chat%7BX%7D-%5Cmu_0%7D%7B%5Csigma%20/%20%5Csqrt%7Bn%7D%7D"> where <img src="https://latex.codecogs.com/png.latex?%5Chat%7BX%7D=%5Cdfrac%7B1%7D%7Bn%7D%7B%5Cdisplaystyle%20%5Csum_%7Bi=i%7D%5E%7Bn%7DX_i%7D">. Under <img src="https://latex.codecogs.com/png.latex?H_0,~%20Z%20%E2%88%BC%20N(0,1)."></li>
+</ul>
+<p>Upper-tailed <em>Z</em>-test:</p>
+<p><img src="https://latex.codecogs.com/png.latex?H_%5Calpha%20:%20%5Cmu%20%3E%20%5Cmu_0"></p>
+<p><img src="https://latex.codecogs.com/png.latex?Rejection~Region%20=%20%5C%7Bz_%7Bobs%7D%20:%20z_%7Bobs%7D%20%3E%20z_%7B1-%5Calpha%7D%5C%7D"></p>
+<div id="tip-pvaluedef" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1: P-value
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="https://latex.codecogs.com/png.latex?p%20%5Ctext-%20value%20=%20P(Z%20%3E%20z_%7Bobs%7D)=1-%5CPhi(z_%7Bobs%7D)"></p>
+</div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?Reject~H_0~if~z_%7Bobs%7D~falls~into~the~RR~or~%20p%20%5Ctext-%20value%20%3C%20%5Calpha."></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="https://latex.codecogs.com/png.latex?z_%5Calpha">: the <img src="https://latex.codecogs.com/png.latex?(1-%5Calpha)"> th percentage point of <img src="https://latex.codecogs.com/png.latex?N(0,%201)."></p>
+<p>The quantile <img src="https://latex.codecogs.com/png.latex?%5CPhi%5E%7B-1%7D(%5Calpha)"> of the standard normal distribution is commonly denoted as <img src="https://latex.codecogs.com/png.latex?z_%7B%5Calpha%7D">.</p>
+</div></div><p>Lower-tailed <em>Z</em>-test:</p>
+<p><img src="https://latex.codecogs.com/png.latex?H_%5Calpha%20:%20%5Cmu%20%3C%20%5Cmu_0"></p>
+<p><img src="https://latex.codecogs.com/png.latex?Rejection~Region%20=%20%5C%7Bz_%7Bobs%7D%20:%20z_%7Bobs%7D%20%3C%20z_%5Calpha%5C%7D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?p%20%5Ctext-%20value%20=%20P(Z%20%3C%20z_%7Bobs%7D)=%5CPhi(z_%7Bobs%7D)"></p>
+<p>Two-tailed <em>Z</em>-test:</p>
+<p><img src="https://latex.codecogs.com/png.latex?H_%5Calpha%20:%20%5Cmu%20%5Cne%20%20%5Cmu_0"></p>
+<p><img src="https://latex.codecogs.com/png.latex?Rejection~Region%20=%20%5C%7Bz_%7Bobs%7D%20:%20%7Cz_%7Bobs%7D%7C%20%3E%20-%20z_%7B%5Calpha/2%7D%5C%7D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?p%20%5Ctext-%20value%20=%20P(%7CZ%7C%20%3E%20%7Cz_%7Bobs%7D%7C)=2P(Z%20%3E%20%7Cz_%7Bobs%7D%7C)=2%5C%7B1-%5CPhi(%7Cz_%7Bobs%7D%7C)%5C%7D"></p>
+</section>
+<section id="one-sample-t-test" class="level3 page-columns page-full" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="one-sample-t-test"><span class="header-section-number">1.1.2</span> One-sample <em>t</em>-test</h3>
+<p>Suppose <img src="https://latex.codecogs.com/png.latex?%5Csigma%20%5E2"> is unknown, but can be estimated by the sample variance</p>
+<p><img src="https://latex.codecogs.com/png.latex?S%5E2=(n-1)%5E%7B-1%7D%5Csum_%7Bi=1%7D%5En(X_i-%5Cbar%7BX%7D)%5E2."></p>
+<ul>
+<li><p>Test statistic: <img src="https://latex.codecogs.com/png.latex?T=%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu_0%7D%7BS/%5Csqrt%7Bn%7D%7D."></p></li>
+<li><p>Under <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Cmu%20=%20%5Cmu_0,%20~T%20%E2%88%BC%20t_%7Bn%E2%88%921%7D."></p></li>
+<li><p><span style="color:red;">Note that the test statistic does not follow <img src="https://latex.codecogs.com/png.latex?N(0,%201)"> as in the <em>Z</em>-test</span> , so the rejection region and <em>p</em>-value have to be calculated by using the <em>t</em> distribution table with <em>n</em> − 1 degrees of freedom instead of standard normal table.</p></li>
+</ul>
+<div class="column-page-right">
+<p>T distribution calculator: <a href="https://wise-jiang-kunyi.shinyapps.io/jky1/" target="_blank">here</a></p>
+<script>
+  var appUrl = "https://wise-jiang-kunyi.shinyapps.io/T-Stat/";
+</script>
+
+<iframe height="800" width="100%" frameborder="yes" src="" id="appFrame"> </iframe>
+
+<script>
+  document.getElementById("appFrame").src = appUrl;
+</script>
+</div>
+</section>
+<section id="large-sample-z-test" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="large-sample-z-test"><span class="header-section-number">1.1.3</span> Large sample z-test</h3>
+<p>Suppose <img src="https://latex.codecogs.com/png.latex?X_1,...X_n"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> with mean <img src="https://latex.codecogs.com/png.latex?%5Cmu"> and variance <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2"> (both are unknown). Note here we do no assume normal distribution. Suppose <em>n</em> is large.</p>
+<p>Test statistic :</p>
+<p><img src="https://latex.codecogs.com/png.latex?T=%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu_0%7D%7BS/%5Csqrt%7Bn%7D%7D."> By CLT, under <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Cmu%20=%20%5Cmu_0,%20~Z%20%E2%88%BC%20N(0%EF%BC%8C1)"> approximately for large <em>n</em>. So the hypothesis test can be carried out as in the <em>z</em>-test for normally distributed data.</p>
+<section id="example-iq-test" class="level4" data-number="1.1.3.1">
+<h4 data-number="1.1.3.1" class="anchored" data-anchor-id="example-iq-test"><span class="header-section-number">1.1.3.1</span> Example: IQ Test</h4>
+</section>
+<section id="example-1.1.1" class="level4" data-number="1.1.3.2">
+<h4 data-number="1.1.3.2" class="anchored" data-anchor-id="example-1.1.1"><span class="header-section-number">1.1.3.2</span> Example 1.1.1</h4>
+<p>Ten sampled students of 18-21 years of age received special training. They are given an IQ test that is <img src="https://latex.codecogs.com/png.latex?N(100,%2010%5E2)"> in the general population. Let <img src="https://latex.codecogs.com/png.latex?%5Cmu"> be the mean IQ of these students who received special training. The observed IQ scores:</p>
+<p>121; 98; 95; 94; 102; 106; 112; 120; 108; 109</p>
+<p>Test if the special training improves the IQ score using significance level <img src="https://latex.codecogs.com/png.latex?%5Calpha">= 0.05.</p>
+<ol type="1">
+<li><p>What is the rejection region? Calculate the <em>p</em>-value and state your conclusion.</p></li>
+<li><p>What if the variance is unknown?</p></li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="border p-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">options</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">digits =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb2-2">x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">121</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">98</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">95</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">94</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">102</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">106</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">112</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">120</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">108</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">109</span>);</span>
+<span id="cb2-3">q <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.95</span></span>
+<span id="cb2-4">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>(x)</span>
+<span id="cb2-5">sort_x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sort</span>(x)</span></code></pre></div>
+</div>
+<p>First we sort data: 94, 95, 98, 102, 106, 108, 109, 112, 120, 121</p>
+</div>
+<div class="border p-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">mean_x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(x)</span></code></pre></div>
+</div>
+<p>mean of data: 106.5</p>
+</div>
+<div class="border p-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">teststa <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> (<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(x)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n))</span></code></pre></div>
+</div>
+<p>Since IQ is <img src="https://latex.codecogs.com/png.latex?N(100,%2010%5E2)">, test statisitic is : 2.055</p>
+</div>
+<div class="border p-3">
+<p>and under <img src="https://latex.codecogs.com/png.latex?H_0:%20IQ=100"> with a significance level <img src="https://latex.codecogs.com/png.latex?%5Calpha">= 0.05, the rejection region can be constructed as <img src="https://latex.codecogs.com/png.latex?100%5Cpm%20z_%7Bq%7D*10/%5Csqrt%20n"> that is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cat</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"["</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(q)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n), <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">","</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(q)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n), <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"]"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 94.8 , 105 ]</code></pre>
+</div>
+</div>
+</div>
+<div class="border p-3">
+<p>Now we can calculation the <em>p</em>-value by definition, see Tip&nbsp;1 :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">pvalue1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pnorm</span>(teststa)</span></code></pre></div>
+</div>
+<p>Since 0.02 <img src="https://latex.codecogs.com/png.latex?%3C%200.05">, conclude that reject <img src="https://latex.codecogs.com/png.latex?H_0"> with a significance level <img src="https://latex.codecogs.com/png.latex?%5Calpha">= 0.05.</p>
+</div>
+<hr>
+<hr>
+<p>Turn to unknown part : suppose sigma is unknown (one-sample t-test),</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">s <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sd</span>(x)</span>
+<span id="cb8-2">tval <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  (<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(x) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(s<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n))</span></code></pre></div>
+</div>
+<p>test statisitic is 2.163</p>
+<div class="border p-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">df <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> n<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">-1</span></span>
+<span id="cb9-2">pvaluet <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>  <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pt</span>(tval, df)</span></code></pre></div>
+</div>
+<p>Since <em>p</em>-value 0.029 &lt; 0.05, conclude that reject <img src="https://latex.codecogs.com/png.latex?H_0"> with a significance level <img src="https://latex.codecogs.com/png.latex?%5Calpha"> = 0.05, given unknown sigma.</p>
+</div>
+<hr>
+<hr>
+<p>reference code :</p>
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">```{r}</span></span>
+<span id="cb10-2"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">##</span></span>
+<span id="cb10-3"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#### R code: analysis of the IQ score data set</span></span>
+<span id="cb10-4"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">##</span></span>
+<span id="cb10-5"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#Test if the mean score is significantly greater than 100</span></span>
+<span id="cb10-6"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#(1) suppose sigma=10 is known (z-test)</span></span>
+<span id="cb10-7"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">x = c(121, 98, 95, 94, 102, 106, 112, 120, 108, 109);</span></span>
+<span id="cb10-8"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">xbar = mean(x);</span></span>
+<span id="cb10-9"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">sigma=10;</span></span>
+<span id="cb10-10"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">n = length(x);</span></span>
+<span id="cb10-11"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">zval = (xbar - 100)/(sigma/sqrt(n));</span></span>
+<span id="cb10-12"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">pvalue = 1-pnorm(zval)</span></span>
+<span id="cb10-13"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#(2) suppose sigma is unknown (one-sample t-test)</span></span>
+<span id="cb10-14"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">s = sd(x)</span></span>
+<span id="cb10-15"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">tval = (xbar - 100)/(s/sqrt(n))</span></span>
+<span id="cb10-16"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">df=n-1</span></span>
+<span id="cb10-17"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">pvalue = 1-pt(tval, df)</span></span>
+<span id="cb10-18"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#or use the existing R function, the default is 2-sided alternative</span></span>
+<span id="cb10-19"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># test if E(X)-100&gt;0 (alternative)</span></span>
+<span id="cb10-20"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">t.test(x-100, alternative ="greater");</span></span>
+<span id="cb10-21"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">```</span></span></code></pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="type-i-error-power-z-test" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="type-i-error-power-z-test"><span class="header-section-number">1.1.4</span> Type I Error &amp; Power (Z-test)</h3>
+<section id="example-1.1.2" class="level4" data-number="1.1.4.1">
+<h4 data-number="1.1.4.1" class="anchored" data-anchor-id="example-1.1.2"><span class="header-section-number">1.1.4.1</span> Example 1.1.2</h4>
+<p>Refer to Example 1.1.1. Suppose <img src="https://latex.codecogs.com/png.latex?X_1,...X_n"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> from <img src="https://latex.codecogs.com/png.latex?N(%5Cmu%20,%5Csigma%5E2)">, where <img src="https://latex.codecogs.com/png.latex?%5Csigma"> is known. Test <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Cmu%20=%20%5Cmu_0~%20versus~%20H_a%20:%20%5Cmu%20%3E%20%5Cmu_0">. Suppose the rejection region is: <img src="https://latex.codecogs.com/png.latex?X%20%3E%20105.2">. Calculate the Type I error of this test procedure.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BIn%20general,%20for%20an%20upper-tailed%20z-test%20%7DH_0:%5Cmu=%5Cmu_0,%5C:H_a:%5Cmu%3E%5Cmu_0."></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7BFor%20%7DRR=%5C%7B%5Cbar%7BX%7D:%5Cbar%7BX%7D%3EC%5C%7D,%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7BType%20I%20error%7D=P%5Cleft(Z=%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu_0%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%3E%5Cfrac%7BC-%5Cmu_0%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Cright)=1-%5CPhi%5Cleft(%5Cfrac%7BC-%5Cmu_0%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Cright).%0A"></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7BType%20I%20error%7D=P%5Cleft(Z=%5Cfrac%7B%5Cbar%7BX%7D-100%7D%7B10/%5Csqrt%7Bn%7D%7D%3E%5Cfrac%7B105.4-100%7D%7B10/%5Csqrt%7Bn%7D%7D%5Cright)=1-%5CPhi%5Cleft(%5Cfrac%7B105.4-100%7D%7B10/%5Csqrt%7Bn%7D%7D%5Cright).%0A"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">test2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105.4</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n))</span>
+<span id="cb11-2">pvalue2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pnorm</span>(test2)</span></code></pre></div>
+</div>
+<p>so Type I error is <img src="https://latex.codecogs.com/png.latex?0.044">.</p>
+</div>
+</div>
+</div>
+<p>Note: The above calculation holds approximately for the approximate z-test based on CLT when n is large.</p>
+<p>(Upper-tailed test) <img src="https://latex.codecogs.com/png.latex?H_0:%5Cmu=%5Cmu_0,~H_a:%5Cmu%3E%5Cmu_0."> For a level <img src="https://latex.codecogs.com/png.latex?%5Calpha"> z-test <img src="https://latex.codecogs.com/png.latex?RR=%5C%7B%5Cbar%7BX%7D:%5Cbar%7BX%7D%3E%5Cmu_%7B0%7D+z_%7B1-%5Calpha%7D*%5Csigma/%5Csqrt%7Bn%7D%5C%7D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BType%20I%20error%7D=P%5Cleft(Z=%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu_0%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%3Ez_%7B1-%5Calpha%7D%5Cright)=1-%5CPhi%5Cleft(z_%7B1-%5Calpha%7D%5Cright)=%5Calpha.%20"></p>
+<p>Power = 1-P(Type II error): the probability of detecting the departure from the null hypothesis, i.e.&nbsp;the chance of rejecting <img src="https://latex.codecogs.com/png.latex?H_0"> when <img src="https://latex.codecogs.com/png.latex?H_a"> is true. This depends on how far the true parameter is away from the null hypothesis. We often fix the parameter value under <img src="https://latex.codecogs.com/png.latex?H_a">.</p>
+</section>
+<section id="example-1.1.3" class="level4" data-number="1.1.4.2">
+<h4 data-number="1.1.4.2" class="anchored" data-anchor-id="example-1.1.3"><span class="header-section-number">1.1.4.2</span> Example 1.1.3</h4>
+<p>Refer to Example 1.1.1. Suppose the true mean is <img src="https://latex.codecogs.com/png.latex?%5Cmu"> = 105 (105 &gt; <img src="https://latex.codecogs.com/png.latex?%5Cmu_0"> = 100 so <img src="https://latex.codecogs.com/png.latex?H_0"> is false). Derive the power of the z-test procedure (reject <img src="https://latex.codecogs.com/png.latex?H_0"> when <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BX%7D"> &gt; 105.2).</p>
+<p>(Upper-tailed Z-test) <img src="https://latex.codecogs.com/png.latex?H_0:%5Cmu=%5Cmu_0,~H_a:%5Cmu%3E%5Cmu_0,"> <img src="https://latex.codecogs.com/png.latex?RR=%5C%7B%5Cbar%7BX%7D:%5Cbar%7BX%7D%3EC%5C%7D."> Suppose the true mean is <img src="https://latex.codecogs.com/png.latex?%5Cmu%5E%7B%5Cprime%7D%3E%5Cmu_0,"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%0APower(%5Cmu%5E%7B%5Cprime%7D)~%0A&amp;%20=%5Cquad%20P(%5Ctext%7BReject%20%7DH_0%7CH_0%5Ctext%7B%20is%20false%7D)%20%20%5C%5C%0A&amp;=%5Cquad%20P(%5Cbar%7BX%7D%3EC%7C%5Cmu=%5Cmu')%20%5C%5C%0A&amp;=%5Cquad%20P%5Cleft%5C%7BZ=%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu%5E%7B%5Cprime%7D%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%3E%5Cfrac%7BC-%5Cmu%5E%7B%5Cprime%7D%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Cright%5C%7D=1-%5CPhi%5Cleft(%5Cfrac%7BC-%5Cmu%5E%7B%5Cprime%7D%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Cright).%0A%5Cend%7Baligned%7D"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">reject_normal <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.95</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb12-2">test3 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> (reject_normal <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n))</span>
+<span id="cb12-3">power_normal <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pnorm</span>(test3)</span></code></pre></div>
+</div>
+<p>Power = 1-P(Type II error) = <img src="https://latex.codecogs.com/png.latex?0.475"></p>
+</section>
+</section>
+<section id="confidence-interval" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="confidence-interval"><span class="header-section-number">1.1.5</span> Confidence Interval</h3>
+<p>Suppose <img src="https://latex.codecogs.com/png.latex?X_1,...X_n"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> from <img src="https://latex.codecogs.com/png.latex?N(%5Cmu%20,%5Csigma%5E2)">, where <img src="https://latex.codecogs.com/png.latex?%5Csigma"> is known. Then (1-<img src="https://latex.codecogs.com/png.latex?%5Calpha">) confidence interval for <img src="https://latex.codecogs.com/png.latex?%5Cmu"> is:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5B%5Cbar%7BX%7D-z_%7B1-%5Cfrac%7B%5Calpha%7D%7B2%7D%7D%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D,%5Cbar%7BX%7D+z_%7B1-%5Cfrac%7B%5Calpha%7D%7B2%7D%7D%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D%5D."></p>
+<section id="example-1.1.4" class="level4" data-number="1.1.5.1">
+<h4 data-number="1.1.5.1" class="anchored" data-anchor-id="example-1.1.4"><span class="header-section-number">1.1.5.1</span> Example 1.1.4</h4>
+<p>For the IQ test example, verify that the 95% confidence interval for <img src="https://latex.codecogs.com/png.latex?%5Cmu"> is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cat</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"["</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(x) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>q)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n), <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">","</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(x) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>q)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(n), <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"]"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 100 , 113 ]</code></pre>
+</div>
+</div>
+<p>Note that it is not correct to say that P(100.3 &lt; <img src="https://latex.codecogs.com/png.latex?%5Cmu"> &lt; 112.7) = 0.95. Why? In general, <img src="https://latex.codecogs.com/png.latex?P(%5Cbar%7BX%7D-z_%7B1-%5Cfrac%7B%5Calpha%7D%7B2%7D%7D%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D%3C%5Cmu%3C%5Cbar%7BX%7D+z_%7B1-%5Cfrac%7B%5Calpha%7D%7B2%7D%7D%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D)=1-%5Calpha"></p>
+<p>where the lower and upper bounds are <strong>random variables</strong>. In the interval [100.3, 112.7], the values have been plugged in.</p>
+</section>
+</section>
+</section>
+<section id="binomial-test" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="binomial-test"><span class="header-section-number">1.2</span> Binomial Test</h2>
+<section id="hypotheses-and-test-statistic" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="hypotheses-and-test-statistic"><span class="header-section-number">1.2.1</span> Hypotheses and Test Statistic</h3>
+<ul>
+<li><p>Assumption: suppose the random sample <img src="https://latex.codecogs.com/png.latex?X_1,...X_n"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> from a distribution with median <img src="https://latex.codecogs.com/png.latex?%5Ctheta">. Different from Section 1.1, here we do not require the distribution to be Normal.</p></li>
+<li><p>Null hypothesis <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Ctheta=%5Ctheta_0">, where <img src="https://latex.codecogs.com/png.latex?%5Ctheta_0"> is prespecified, e.g.<img src="https://latex.codecogs.com/png.latex?%5Ctheta_0=0"> corresponds to testing if the distribution is centered at 0.</p></li>
+<li><p>Note that if the distribution is symmetric, the <img src="https://latex.codecogs.com/png.latex?H_0"> is equivalent to test if the population mean= <img src="https://latex.codecogs.com/png.latex?%5Ctheta_0">.</p></li>
+<li><p>Alternative hypothesis <img src="https://latex.codecogs.com/png.latex?H_a%20:%20%5Ctheta%20%3E%20%5Ctheta_0"> (upper-tailed test).</p></li>
+</ul>
+<p>We consider the binomial test statistic: <img src="https://latex.codecogs.com/png.latex?S%20=%20number~%20of~%20X_is~%20that~%20exceed~%20%5Cmu_0"></p>
+<p>That is, <img src="https://latex.codecogs.com/png.latex?S"> is the total number of observations out of n that exceed the hypothesized median <img src="https://latex.codecogs.com/png.latex?%5Cmu_0">. In another word,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%20S%20=%20%5Csum_%7Bi=1%7D%5E%7Bn%7D%20I(X_i%20%3E%20%5Cmu_0);"> where <img src="https://latex.codecogs.com/png.latex?I(A)"> is the indicator function that takes value 1 if the statement <img src="https://latex.codecogs.com/png.latex?A"> holds and zero otherwise.</p>
+<p>In <img src="https://latex.codecogs.com/png.latex?S">, we care about only the signs of <img src="https://latex.codecogs.com/png.latex?X_i%20-%20%5Cmu_0"> (whether <img src="https://latex.codecogs.com/png.latex?X_i"> is greater than <img src="https://latex.codecogs.com/png.latex?%5Cmu_0"> or not), but not the magnitudes of <img src="https://latex.codecogs.com/png.latex?X_i%20-%20%5Cmu_0">. Therefore, the Binomial test is also called “sign test”.</p>
+<p>To determine the rejection region and calculate the <em>p</em>-value, we need know the distribution of the test statistic <img src="https://latex.codecogs.com/png.latex?S"> when <img src="https://latex.codecogs.com/png.latex?H_0"> is true.</p>
+<p><strong>Distribution of</strong> <img src="https://latex.codecogs.com/png.latex?S"> under <img src="https://latex.codecogs.com/png.latex?H_0">: when <img src="https://latex.codecogs.com/png.latex?H_0"> is true, we would expect half of the data are greater than <img src="https://latex.codecogs.com/png.latex?%5Ctheta_0">, and half are smaller than <img src="https://latex.codecogs.com/png.latex?%5Ctheta_0">.</p>
+<p>Therefore,</p>
+<p><img src="https://latex.codecogs.com/png.latex?S%20%E2%88%BC%20Binomial(n,%20p%20=%200.5)~%20under%20~H_0;"></p>
+<p>irrespective of the underlined distribution of <img src="https://latex.codecogs.com/png.latex?X_i's">. Here <img src="https://latex.codecogs.com/png.latex?p"> is the population proportion of <img src="https://latex.codecogs.com/png.latex?X_i%20%3E%20%5Cmu_0">. Thus, testing <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Ctheta=%5Ctheta_0"> versus <img src="https://latex.codecogs.com/png.latex?H_a%20:%20%5Ctheta%3E%5Ctheta_0"> is equivalent to testing</p>
+<p><img src="https://latex.codecogs.com/png.latex?H_0%20:%20p%20=%200.5~%20versus~%20H_a%20:%20p%20%3E%200.5~."></p>
+</section>
+<section id="rejection-region-type-i-error-and-power" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="rejection-region-type-i-error-and-power"><span class="header-section-number">1.2.2</span> Rejection Region, Type I Error and Power</h3>
+<ul>
+<li><p>For the upper-tailed test, a larger value of <img src="https://latex.codecogs.com/png.latex?S"> provides more contradiction of <img src="https://latex.codecogs.com/png.latex?H_0">.</p></li>
+<li><p>Rejection region: reject <img src="https://latex.codecogs.com/png.latex?H_0"> when <img src="https://latex.codecogs.com/png.latex?S%20%5Cge%20c_%7Bval%7D">, where <img src="https://latex.codecogs.com/png.latex?c_%7Bval%7D"> is the <em>critical value</em> that is determined to control Type I error at level <img src="https://latex.codecogs.com/png.latex?%5Calpha">, that is, find <img src="https://latex.codecogs.com/png.latex?c_%7Bval%7D"> such that <img src="https://latex.codecogs.com/png.latex?P(S%5Cgeq%20c_%7Bval%7D%5C,%7CH_0)=%5Csum_%7Bk=c_%7Bval%7D%7D%5En%5Cbinom%20nk0.5%5En=%5Calpha."></p></li>
+<li><p>Since Binomial is a discrete distribution, we may not be able to find an integer <img src="https://latex.codecogs.com/png.latex?c_%7Bval%7D"> to make the Type I error equal <img src="https://latex.codecogs.com/png.latex?%5Calpha"> exactly. In practice, we find an integer <img src="https://latex.codecogs.com/png.latex?c_%7Bval%7D"> such that the Type I error is as close to <img src="https://latex.codecogs.com/png.latex?%5Calpha"> (no larger than) as possible.</p></li>
+</ul>
+<p>Large Sample Approximation:</p>
+<p>For large n, by Central Limit Theorem, we know that approximately</p>
+<p><img src="https://latex.codecogs.com/png.latex?S%20%E2%88%BC%20N(0.5n,%200.25n)%20~under~%20H_0."> Therefore, for large n, the approximate rejection region is:</p>
+<p><img src="https://latex.codecogs.com/png.latex?S%20%E2%89%A5%200.5n%20+%20z_%7B1-%5Calpha%7D%5Csqrt%7B0.25n%7D,"> which has Type I error approximately equal <img src="https://latex.codecogs.com/png.latex?%5Calpha">.</p>
+<section id="example-1.2.1" class="level4" data-number="1.2.2.1">
+<h4 data-number="1.2.2.1" class="anchored" data-anchor-id="example-1.2.1"><span class="header-section-number">1.2.2.1</span> Example 1.2.1</h4>
+<p>Refer to Example 1.1.1. The observed IQ scores:</p>
+<p><img src="https://latex.codecogs.com/png.latex?121;%2098;%2095;%2094;%20102;%20106;%20112;%20120;%20108;%20109"></p>
+<p>Test <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Ctheta=100"> versus <img src="https://latex.codecogs.com/png.latex?H_a%20:%20%5Ctheta%3E100">. Suppose the rejection region is: reject when <img src="https://latex.codecogs.com/png.latex?S%20%E2%89%A5%208">.</p>
+<ol type="1">
+<li><p>Calculate the Type I error of this test procedure.</p></li>
+<li><p>Calculate the Type I error using the Normal approximation (based on CLT).</p></li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">type.<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.</span>error <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dbinom</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>))</span></code></pre></div>
+</div>
+<p>Type I error: <img src="https://latex.codecogs.com/png.latex?P(RR%7CH_0)=P(S%20%5Cge%208%7C%5Ctheta=100)=%5Csum_%7Bk=8%7D%5E%7B10%7D%5Cbinom%20%7Bk%7D%7B10%7D0.5%5E%7B10%7D=0.055"></p>
+<p>Using the Normal approximation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span></span>
+<span id="cb16-2">mean_s <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>n</span>
+<span id="cb16-3">sd_s <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">-0.5</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>n)</span>
+<span id="cb16-4">type.<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.</span>error.normal <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pnorm</span>((<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>mean_s)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(sd_s))</span></code></pre></div>
+</div>
+<p>Type I error: <img src="https://latex.codecogs.com/png.latex?P(RR%7CH_0)=P(S%20%5Cge%208%7C%5Ctheta=100)=P%5Cleft(%5Cfrac%7BS-5%7D%7B%5Csqrt%7B2.5%7D%7D%20%5Cge%20%5Cfrac%7B8-5%7D%7B%5Csqrt%7B2.5%7D%7D%20%5Cright)=0.029"></p>
+</div>
+</div>
+</div>
+<p>Power calculation: Suppose <img src="https://latex.codecogs.com/png.latex?X_1,...X_n"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> with median <img src="https://latex.codecogs.com/png.latex?%5Ctheta"> and variance <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2">.</p>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Ctheta%20=%20%5Ctheta_0~%20versus~%20H_a%20:%20%5Ctheta%20%3E%20%5Ctheta_0~."></p></li>
+<li><p>Rejection region: <img src="https://latex.codecogs.com/png.latex?S%20%E2%89%A5%20c_%7Bval%7D">.</p></li>
+<li><p>Suppose the true median is <img src="https://latex.codecogs.com/png.latex?%5Ctheta'%20=%20%5Ctheta_0">, what is the power of the test procedure?</p></li>
+</ul>
+<div id="tip-p_prime" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;2: <img src="https://latex.codecogs.com/png.latex?p%5Cprime">
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Under <img src="https://latex.codecogs.com/png.latex?H_a%20:%20S%20%E2%88%BC%20Binomial(n,%20p')">, where</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?p%5Cprime%20=%20P%20(X%20%3E%20%5Ctheta_0)%3E%200.5~~."></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We need know/assume the distribution of <img src="https://latex.codecogs.com/png.latex?X_i"> in order to obtain <img src="https://latex.codecogs.com/png.latex?p'"> and calculate the power.</p>
+</div>
+</div>
+<p>Suppose <img src="https://latex.codecogs.com/png.latex?p'"> is already calculated. Then the power of the sign test is:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%0A%5Cbeta(%5Ctheta%5E%7B%5Cprime%7D)&amp;%20=%5Cquad%20P%5C%7BS%5Cgeq%20c_%7Bval%7D%7CS%5Csim%20Binomial(n,p')%5C%7D%20%20%5C%5C%0A&amp;=%5Cquad1-B(c_%7Bval%7D-1;n,p%5E%7B%5Cprime%7D)%5Cquad%5Ctext%7B(exact,%20small%20sample)%7D%20%5C%5C%0A&amp;%5Capprox%5Cquad1-%5CPhi%5Cleft%5C%7B%5Cfrac%7Bc_%7Bval%7D-np%5E%7B%5Cprime%7D%7D%7B%5Csqrt%7Bnp%5E%7B%5Cprime%7D(1-p%5E%7B%5Cprime%7D)%7D%7D%5Cright%5C%7D%5Ctext%7B(large-sample)%7D.%0A%5Cend%7Baligned%7D"></p>
+</section>
+<section id="example-1.2.2" class="level4" data-number="1.2.2.2">
+<h4 data-number="1.2.2.2" class="anchored" data-anchor-id="example-1.2.2"><span class="header-section-number">1.2.2.2</span> Example 1.2.2</h4>
+<p>Suppose <img src="https://latex.codecogs.com/png.latex?X_1,...X_%7B10%7D"> are <img src="https://latex.codecogs.com/png.latex?i.i.d%20%5Csim%20N(%5Ctheta,10%5E2)."> Test <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Ctheta%20=%20100"> versus <img src="https://latex.codecogs.com/png.latex?H_a%20:%20%5Ctheta%20%3E%20100">. Consider two tests:</p>
+<ol type="A">
+<li><p>z-test: reject <img src="https://latex.codecogs.com/png.latex?H_0"> when <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BX%7D%20%3E100%20+%201.645%20%C3%97%2010/%5Csqrt%7B10%7D%20=%20105.2"> (Type I error: 0.05)</p></li>
+<li><p>Binomial test: reject <img src="https://latex.codecogs.com/png.latex?H_0"> when <img src="https://latex.codecogs.com/png.latex?S%20%E2%89%A5%208"> (Type I error: 0.055)</p></li>
+</ol>
+<p>Suppose the truth is <img src="https://latex.codecogs.com/png.latex?%5Ctheta=%20105">. Compare the power of the two tests for detecting such a departure from <img src="https://latex.codecogs.com/png.latex?H_0">. (Refer to Example 1.1.3 for the power of the z-test.)</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First we calculate the <img src="https://latex.codecogs.com/png.latex?p%5E%7B%5Cprime%7D">: Tip&nbsp;2</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1">p_prime <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pnorm</span>((<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100-105</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>))</span></code></pre></div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?p%5E%7B%5Cprime%7D=0.691"></p>
+<p>and the power of Binomial test:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1">power_bi <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dbinom</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,p_prime))</span></code></pre></div>
+</div>
+<p>the power of Binomial test <img src="https://latex.codecogs.com/png.latex?=0.36">, the power of z-test is <img src="https://latex.codecogs.com/png.latex?0.475">.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-1.2.3" class="level4" data-number="1.2.2.3">
+<h4 data-number="1.2.2.3" class="anchored" data-anchor-id="example-1.2.3"><span class="header-section-number">1.2.2.3</span> Example 1.2.3</h4>
+<p>Suppose <img src="https://latex.codecogs.com/png.latex?X_i"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> from the <em>Laplace</em> distribution with mean 105 and variance 100 with <em>pdf</em></p>
+<p><img src="https://latex.codecogs.com/png.latex?f(x)=%5Cfrac1%7B10%5Csqrt%7B2%7D%7D%5Cexp%5Cleft%5C%7B-%5Cfrac%7B%7Cx-105%7C%7D%7B10/%5Csqrt%7B2%7D%7D%5Cright%5C%7D,%5Cquad-%5Cinfty%3Cx%3C+%5Cinfty."></p>
+<p>Laplace distribution is symmetric about the mean, but it has a fatter tail than the normal distribution. Find the power of the Binomial test.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First we calculate the <img src="https://latex.codecogs.com/png.latex?p%5E%7B%5Cprime%7D">: Tip&nbsp;2</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># install.packages('VGAM')</span></span>
+<span id="cb19-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(VGAM); </span>
+<span id="cb19-3">p_prime_laplace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plaplace</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>))</span></code></pre></div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?p%5E%7B%5Cprime%7D=0.753"></p>
+<p>and the power of Laplace test:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1">power_bi_laplace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dbinom</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,p_prime_laplace))</span></code></pre></div>
+</div>
+<p>the power of Binomial test is <img src="https://latex.codecogs.com/png.latex?0.536">, larger than z-test <img src="https://latex.codecogs.com/png.latex?(=%200.475)">.</p>
+<p>Binomial test is more powerful than z-test for heavy-tailed distributions!!</p>
+</div>
+</div>
+</div>
+<p>Sample size determination: For the large sample level <img src="https://latex.codecogs.com/png.latex?%5Calpha"> sign test, <img src="https://latex.codecogs.com/png.latex?c_%7Bval%7D%20=%200.5n%20+%20z_%7B1-%5Calpha%7D%5Csqrt%7B0.25n%7D."> In order to achieve power <img src="https://latex.codecogs.com/png.latex?%5Cbeta">, say, 90%, what is the smallest n required?</p>
+<p>We need n such that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbeta(%5Ctheta')%5Cquad%5Capprox%5Cquad1-%5CPhi%5Cleft%5C%7B%5Cfrac%7Bc_%7Bval%7D-np'%7D%7B%5Csqrt%7Bnp'(1-p')%7D%7D%5Cright%5C%7D%5Cgeq%5Cbeta."></p>
+<p>That is, we need</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%0Az_%7B1-%5Cbeta%7D%20&amp;%5Cge%5Cfrac%7B0.5n+z_%7B1-%5Calpha%7D%5Csqrt%7B0.25n%7D-np%5E%7B%5Cprime%7D%7D%7B%5Csqrt%7Bnp%5E%7B%5Cprime%7D(1-p%5E%7B%5Cprime%7D)%7D%7D%20%5C%5C%0A%5CRightarrow%5Cquad%20n&amp;%5Cgeq%5Cfrac%7B%5C%7B0.5z_%7B1-%5Calpha%7D-z_%7B1-%5Cbeta%7D%5Csqrt%7Bp%5E%7B%5Cprime%7D(1-p%5E%7B%5Cprime%7D)%7D%5C%7D%5E2%7D%7B(0.5-p%5E%7B%5Cprime%7D)%5E2%7D%5Ctext%7B%20(round%20up).%7D%5Cend%7Baligned%7D"></p>
+</section>
+<section id="example-1.2.4" class="level4" data-number="1.2.2.4">
+<h4 data-number="1.2.2.4" class="anchored" data-anchor-id="example-1.2.4"><span class="header-section-number">1.2.2.4</span> Example 1.2.4</h4>
+<p>(Refer to Example 1.2.2) Desired power <img src="https://latex.codecogs.com/png.latex?%5Cbeta%20=%200.475">, calculate the minimum sample size required for the Binomial test.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1">beta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.475</span></span>
+<span id="cb21-2">size_require <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.95</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>beta)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(p_prime<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p_prime)))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p_prime)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span></code></pre></div>
+</div>
+<p>The minimum sample size required for the Binomial test is 18</p>
+</div>
+</div>
+</div>
+<p>Calcuate the power of the two tests using simulation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1">n<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span></span>
+<span id="cb22-2">reject.ztest <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> reject.binom <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb22-3">reject.ztest.laplace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> reject.binom.laplace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb22-4"></span>
+<span id="cb22-5"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span>(j <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>){</span>
+<span id="cb22-6">x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(n, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb22-7">y <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rlaplace</span>(n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">location=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">scale=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>))</span>
+<span id="cb22-8"></span>
+<span id="cb22-9">xbar <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(x)</span>
+<span id="cb22-10">ybar <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(y)</span>
+<span id="cb22-11"></span>
+<span id="cb22-12">S.nor <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(x<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb22-13">S.lap <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(y<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb22-14"></span>
+<span id="cb22-15">reject.ztest <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> reject.ztest <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(xbar <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105.2</span>)</span>
+<span id="cb22-16">reject.binom <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> reject.binom <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(S.nor<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>)</span>
+<span id="cb22-17"></span>
+<span id="cb22-18">reject.ztest.laplace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> reject.ztest.laplace <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(ybar <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105.2</span>)</span>
+<span id="cb22-19">reject.binom.laplace <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> reject.binom.laplace <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(S.lap<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>)</span>
+<span id="cb22-20">}</span></code></pre></div>
+</div>
+<p>The power of Binomial test is <img src="https://latex.codecogs.com/png.latex?0.395">, z-test is <img src="https://latex.codecogs.com/png.latex?0.517">.</p>
+<p>When <img src="https://latex.codecogs.com/png.latex?X_i"> follow <img src="https://latex.codecogs.com/png.latex?Laplace(105,10/%5Csqrt%7B2%7D)"> (variance is <img src="https://latex.codecogs.com/png.latex?100=scale%5E2">), the power of Binomial test is <img src="https://latex.codecogs.com/png.latex?0.566">, z-test is <img src="https://latex.codecogs.com/png.latex?0.487">.</p>
+</section>
+</section>
+<section id="hypothesis-testing-p-value" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="hypothesis-testing-p-value"><span class="header-section-number">1.2.3</span> Hypothesis Testing: <em>p</em>-value</h3>
+<ul>
+<li><p>The <em>p</em>-value is the probability of obtaining a test statistic value as extreme as the observed value, calculated assuming <img src="https://latex.codecogs.com/png.latex?H_0"> is true.</p></li>
+<li><p>Suppose <img src="https://latex.codecogs.com/png.latex?Y%20%5Csim%20Binomial(n,%20p)">, then the probability mass function of Y is: 冲冲冲</p></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+
+ ]]></description>
+  <category>Nonpara</category>
+  <guid>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methods.html</guid>
+  <pubDate>Mon, 11 Mar 2024 15:43:49 GMT</pubDate>
+  <media:content url="https://wisejky.netlify.app/course/Nonpara/images/hero_right.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>Nonparametric Econometrics Ch1</title>
+  <dc:creator>Jiang Kunyi</dc:creator>
+  <link>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methodstest.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This document demonstrates the use of a number of advanced page layout features to produce an attractive and usable document inspired by the Tufte handout style and the use of Tufte’s styles in RMarkdown documents. The Tufte handout style is a style that Edward Tufte uses in his books and handouts. Tufte’s style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography. Quarto<sup>1</sup> supports most of the layout techniques that are used in the Tufte handout style for both HTML and LaTeX/PDF output.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;To learn more, you can read more about <a href="https://www.quarto.org">Quarto</a> or visit <a href="https://www.github.com/quarto-dev/quarto-cli">Quarto’s Github repository</a>.</p></div></div><div class="column-page-right">
+<p><em>R is free software and comes with ABSOLUTELY NO WARRANTY.</em> You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="https://www.gnu.org/licenses/" class="uri">https://www.gnu.org/licenses/</a>.</p>
+</div>
+<div class="sourceCode" id="annotated-cell-1" style="background: #f1f3f5;"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-1-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="annotated-cell-1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">title</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"An Example Using the Tufte Style"</span></span>
+<span id="annotated-cell-1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">author</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"John Smith"</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">            </span></span>
+<span id="annotated-cell-1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">format</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="annotated-cell-1-5"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="annotated-cell-1-6"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">grid</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-7" class="code-annotation-target"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">margin-width</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> 350px</span></span>
+<span id="annotated-cell-1-8"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pdf</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> default    </span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-9" class="code-annotation-target"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">reference-location</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> margin</span></span>
+<span id="annotated-cell-1-10"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">citation-location</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> margin</span></span>
+<span id="annotated-cell-1-11"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="1">Increases the width of the margin to make more room for sidenotes and margin figures (HTML only).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="9,10" data-code-annotation="2">Places footnotes and cited sources in the margin. Other layout options (for example placing a figure in the margin) will be set per element in examples below.</span>
+</dd>
+</dl>
+<p>These layout features are designed with two important goals in mind:</p>
+<ol type="1">
+<li>To produce both PDF and HTML output with similar styles from the same Quarto document;</li>
+<li>To provide simple syntax to write elements of the Tufte style such as side notes and margin figures. If you’d like a figure placed in the margin, just s</li>
+</ol>
+<section id="one-sample-methods" class="level1">
+<h1>One-Sample Methods</h1>
+<p>The nonparametric tests described in this course are often called distribution-free test procedures because the validity of the tests does not depend on the underlying model (distribution) assumption. In other words, the significance level of the tests does not depend on the distributional assumptions.</p>
+<ul>
+<li><p>One-sample data: consists of observations from a single population.</p></li>
+<li><p>Primary interest: make inference about the location/center of the single distribution.</p></li>
+<li><p>Two popular measurements of location/center</p>
+<ul>
+<li><p>Mean: sensitive to outliers</p></li>
+<li><p>Median: robust against outliers</p></li>
+<li><p>Mean and Median are the same for symmetric distributions.</p></li>
+</ul></li>
+</ul>
+<section id="parametric-methods" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-methods">Parametric Methods</h2>
+<section id="one-sample-z-test-see-chapter-0.3.1" class="level3">
+<h3 class="anchored" data-anchor-id="one-sample-z-test-see-chapter-0.3.1">One-sample Z-test (see Chapter 0.3.1)</h3>
+<ul>
+<li>Assumption: The random sample <img src="https://latex.codecogs.com/png.latex?X_1,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20X_n"> are <img src="https://latex.codecogs.com/png.latex?i.i.d"> from <img src="https://latex.codecogs.com/png.latex?N(%5Cmu%20,%5Csigma%5E2)">, where <img src="https://latex.codecogs.com/png.latex?%5Cmu"> is the unknown mean, and <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2"> is the variance and is known.</li>
+<li>Null hypothesis <img src="https://latex.codecogs.com/png.latex?H_0%20:%20%5Cmu%20=%20%5Cmu_0"> (the distribution is centered at <img src="https://latex.codecogs.com/png.latex?%5Cmu_0">~, a prespecified null value).</li>
+<li>Significance level <img src="https://latex.codecogs.com/png.latex?%5Calpha">, <em>i.e.</em> we want to control <img src="https://latex.codecogs.com/png.latex?Type~I~error%20=%20%20P(Reject~H_0~%7C~H_0~is~True)%20%5Cle%20%5Calpha."></li>
+<li><strong>Test statistic</strong> <img src="https://latex.codecogs.com/png.latex?Z%20=%5Cfrac%7B%5Chat%7BX%7D-%5Cmu_0%7D%7B%5Csigma%20/%20%5Csqrt%7Bn%7D%7D"> where <img src="https://latex.codecogs.com/png.latex?%5Chat%7BX%7D=%5Cdfrac%7B1%7D%7Bn%7D%7B%5Cdisplaystyle%20%5Csum_%7Bi=i%7D%5E%7Bn%7DX_i%7D">. Under <img src="https://latex.codecogs.com/png.latex?H_0,~%20Z%20%E2%88%BC%20N(0,1)."></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">```{r}</span></span>
+<span id="cb1-2"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">##</span></span>
+<span id="cb1-3"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#### R code: analysis of the IQ score data set</span></span>
+<span id="cb1-4"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">##</span></span>
+<span id="cb1-5"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#Test if the mean score is significantly greater than 100</span></span>
+<span id="cb1-6"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#(1) suppose sigma=10 is known (z-test)</span></span>
+<span id="cb1-7"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">x = c(121, 98, 95, 94, 102, 106, 112, 120, 108, 109);</span></span>
+<span id="cb1-8"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">xbar = mean(x);</span></span>
+<span id="cb1-9"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">sigma=10;</span></span>
+<span id="cb1-10"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">n = length(x);</span></span>
+<span id="cb1-11"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">zval = (xbar - 100)/(sigma/sqrt(n));</span></span>
+<span id="cb1-12"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">zval;</span></span>
+<span id="cb1-13"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">pvalue = 1-pnorm(zval)</span></span>
+<span id="cb1-14"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">pvalue;</span></span>
+<span id="cb1-15"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#(2) suppose sigma is unknown (one-sample t-test)</span></span>
+<span id="cb1-16"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">s = sd(x)</span></span>
+<span id="cb1-17"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">tval = (xbar - 100)/(s/sqrt(n))</span></span>
+<span id="cb1-18"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">tval</span></span>
+<span id="cb1-19"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">df=n-1</span></span>
+<span id="cb1-20"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">pvalue = 1-pt(tval, df)</span></span>
+<span id="cb1-21"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#or use the existing R function, the default is 2-sided alternative</span></span>
+<span id="cb1-22"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># test if E(X)-100&gt;0 (alternative)</span></span>
+<span id="cb1-23"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">t.test(x-100, alternative ="greater")</span></span>
+<span id="cb1-24"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">```</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.05548
+[1] 0.01991631
+[1] 2.163331
+
+    One Sample t-test
+
+data:  x - 100
+t = 2.1633, df = 9, p-value = 0.02937
+alternative hypothesis: true mean is greater than 0
+95 percent confidence interval:
+ 0.9921811       Inf
+sample estimates:
+mean of x 
+      6.5 </code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+
+ ]]></description>
+  <guid>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methodstest.html</guid>
+  <pubDate>Invalid Date</pubDate>
+  <media:content url="https://wisejky.netlify.app/images/hero_right.png" medium="image" type="image/png"/>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,30 @@
+---
+title: "Nonparametric Econometrics"
+subtitle: Nonparametric Econometrics explores statistical methods that do not rely on specific parametric assumptions, offering flexible approaches to analyzing economic data and uncovering relationships without imposing restrictive models.
+#page-layout: article
+anchor-sections: false
+search: false
+#listing:
+ # id: guide-links
+  #template: links.ejs
+  #contents: guide.yml
+listing:
+    contents: "Nonpara/*.qmd"
+    type: default
+    sort: "date desc"
+    sort-ui: false
+    filter-ui: true
+    categories: true
+    feed: true
+image: /images/hero_right.png
+css: styles.css
+toc: false
+
+#format: 
+  #pdf: default
+
+bread-crumbs: true
+---
+
+::: {#guide-links .column-screen-inset-right style="max-width: 850px;"}
+:::

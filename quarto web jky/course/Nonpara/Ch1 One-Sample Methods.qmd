@@ -1,0 +1,588 @@
+---
+title: "Nonparametric Econometrics Ch1"
+subtitle: Ch1：abd
+
+date: last-modified
+
+author: "Jiang Kunyi"
+
+categories: 
+  - Nonpara
+
+image: images/hero_right.png
+anchor-sections: true
+search: false
+code-annotations: select
+css: styles.css
+toc: true
+reference-location: margin
+citation-location: margin
+#execute: 
+ # echo: fenced
+ # enabled: false
+
+format:
+  html:
+    self-contained: true
+    number-sections: true
+    code-fold: false
+    code-tools: true
+    grid:
+       margin-width: 350px
+  #pdf: default
+---
+
+```{r}
+radius <- 5
+```
+
+The radius of the circle is `{r} radius`
+
+This document demonstrates the use of a number of advanced page layout features to produce an attractive and usable document inspired by the Tufte handout style and the use of Tufte's styles in RMarkdown documents. The Tufte handout style is a style that Edward Tufte uses in his books and handouts. Tufte's style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography. Quarto[^1] supports most of the layout techniques that are used in the Tufte handout style for both HTML and LaTeX/PDF output.
+
+[^1]: To learn more, you can read more about [Quarto](https://www.quarto.org) or visit [Quarto's Github repository](https://www.github.com/quarto-dev/quarto-cli).
+
+::: column-page-right
+*R is free software and comes with ABSOLUTELY NO WARRANTY.* You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <https://www.gnu.org/licenses/>.
+:::
+
+``` yaml
+---
+title: "An Example Using the Tufte Style"
+author: "John Smith"
+format:
+  html:
+    grid:
+      margin-width: 350px         # <1>
+  pdf: default
+reference-location: margin        # <2>
+citation-location: margin         # <2>
+---
+```
+
+1.  Increases the width of the margin to make more room for sidenotes and margin figures (HTML only).
+2.  Places footnotes and cited sources in the margin. Other layout options (for example placing a figure in the margin) will be set per element in examples below.
+
+# One-Sample Methods
+
+The nonparametric tests described in this course are often called distribution-free test procedures because the validity of the tests does not depend on the underlying model (distribution) assumption. In other words, the significance level of the tests does not depend on the distributional assumptions.
+
+-   One-sample data: consists of observations from a single population.
+
+-   Primary interest: make inference about the location/center of the single distribution.
+
+-   Two popular measurements of location/center
+
+    -   Mean: sensitive to outliers
+
+    -   Median: robust against outliers
+
+    -   Mean and Median are the same for symmetric distributions.
+
+## Parametric Methods
+
+### One-sample Z-test (see Chapter 0.3.1)
+
+-   Assumption: The random sample $X_1,...X_n$ are $i.i.d$ from $N(\mu ,\sigma^2)$, where $\mu$ is the unknown mean, and $\sigma^2$ is the variance and is known.
+-   Null hypothesis $H_0 : \mu = \mu_0$ (the distribution is centered at $\mu_0$\~, a prespecified null value).
+-   Significance level $\alpha$, *i.e.* we want to control $$Type~I~error =  P(Reject~H_0~|~H_0~is~True) \le \alpha.$$
+-   **Test statistic** $$Z =\frac{\hat{X}-\mu_0}{\sigma / \sqrt{n}}$$ where $\hat{X}=\dfrac{1}{n}{\displaystyle \sum_{i=i}^{n}X_i}$. Under $H_0,~ Z ∼ N(0,1).$
+
+Upper-tailed *Z*-test:
+
+$$H_\alpha : \mu > \mu_0$$
+
+$$Rejection~Region = \{z_{obs} : z_{obs} > z_{1-\alpha}\}$$
+
+::: {#tip-pvaluedef .callout-tip}
+#### P-value
+
+$$p \text- value = P(Z > z_{obs})=1-\Phi(z_{obs})$$
+:::
+
+$$Reject~H_0~if~z_{obs}~falls~into~the~RR~or~ p \text- value < \alpha.$$
+
+::: column-margin
+$z_\alpha$: the $(1-\alpha)$ th percentage point of $N(0, 1).$
+
+The quantile $\Phi^{-1}(\alpha)$ of the standard normal distribution is commonly denoted as $z_{\alpha}$.
+:::
+
+Lower-tailed *Z*-test:
+
+$$H_\alpha : \mu < \mu_0$$
+
+$$Rejection~Region = \{z_{obs} : z_{obs} < z_\alpha\}$$
+
+$$p \text- value = P(Z < z_{obs})=\Phi(z_{obs})$$
+
+Two-tailed *Z*-test:
+
+$$H_\alpha : \mu \ne  \mu_0$$
+
+$$Rejection~Region = \{z_{obs} : |z_{obs}| > - z_{\alpha/2}\}$$
+
+$$p \text- value = P(|Z| > |z_{obs}|)=2P(Z > |z_{obs}|)=2\{1-\Phi(|z_{obs}|)\}$$
+
+### One-sample *t*-test
+
+Suppose $\sigma ^2$ is unknown, but can be estimated by the sample variance
+
+$$S^2=(n-1)^{-1}\sum_{i=1}^n(X_i-\bar{X})^2.$$
+
+-   Test statistic: $$T=\frac{\bar{X}-\mu_0}{S/\sqrt{n}}.$$
+
+-   Under $H_0 : \mu = \mu_0, ~T ∼ t_{n−1}.$
+
+-   [Note that the test statistic does not follow $N(0, 1)$ as in the *Z*-test]{style="color:red;"} , so the rejection region and *p*-value have to be calculated by using the *t* distribution table with *n* − 1 degrees of freedom instead of standard normal table.
+
+::: column-page-right
+T distribution calculator: [here](https://wise-jiang-kunyi.shinyapps.io/jky1/){target="_blank"}
+
+```{=html}
+<script>
+  var appUrl = "https://wise-jiang-kunyi.shinyapps.io/T-Stat/";
+</script>
+
+<iframe height="800" width="100%" frameborder="yes" src="" id="appFrame"> </iframe>
+
+<script>
+  document.getElementById("appFrame").src = appUrl;
+</script>
+```
+:::
+
+### Large sample z-test
+
+Suppose $X_1,...X_n$ are $i.i.d$ with mean $\mu$ and variance $\sigma^2$ (both are unknown). Note here we do no assume normal distribution. Suppose *n* is large.
+
+Test statistic :
+
+$$T=\frac{\bar{X}-\mu_0}{S/\sqrt{n}}.$$ By CLT, under $H_0 : \mu = \mu_0, ~Z ∼ N(0，1)$ approximately for large *n*. So the hypothesis test can be carried out as in the *z*-test for normally distributed data.
+
+#### Example: IQ Test
+
+#### Example 1.1.1
+
+Ten sampled students of 18-21 years of age received special training. They are given an IQ test that is $N(100, 10^2)$ in the general population. Let $\mu$ be the mean IQ of these students who received special training. The observed IQ scores:
+
+121; 98; 95; 94; 102; 106; 112; 120; 108; 109
+
+Test if the special training improves the IQ score using significance level $\alpha$= 0.05.
+
+1.  What is the rejection region? Calculate the *p*-value and state your conclusion.
+
+2.  What if the variance is unknown?
+
+::: {.callout-caution collapse="true"}
+#### Answer
+
+::: {.border .p-3}
+```{r}
+options(digits = 3)
+x <- c(121, 98, 95, 94, 102, 106, 112, 120, 108, 109);
+q <- 0.95
+n <- length(x)
+sort_x <- sort(x)
+```
+
+First we sort data: `{r} sort(x)`
+:::
+
+::: {.border .p-3}
+```{r}
+mean_x <- mean(x)
+```
+
+mean of data: `{r} mean(x)`
+:::
+
+::: {.border .p-3}
+```{r}
+teststa <- (mean(x)-100)/(10/sqrt(n))
+```
+
+Since IQ is $N(100, 10^2)$, test statisitic is : `{r} teststa`
+:::
+
+::: {.border .p-3}
+and under $H_0: IQ=100$ with a significance level $\alpha$= 0.05, the rejection region can be constructed as $$100\pm z_{q}*10/\sqrt n$$ that is:
+
+```{r}
+cat("[", 100 - qnorm(q)*10/sqrt(n), ",", 100 + qnorm(q)*10/sqrt(n), "]")
+```
+:::
+
+::: {.border .p-3}
+Now we can calculation the *p*-value by definition, see @tip-pvaluedef :
+
+```{r}
+pvalue1 <- 1-pnorm(teststa)
+```
+
+Since `{r} round(1-pnorm(teststa),3)` $< 0.05$, conclude that reject $H_0$ with a significance level $\alpha$= 0.05.
+:::
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+Turn to unknown part : suppose sigma is unknown (one-sample t-test),
+
+```{r}
+s <-  sd(x)
+tval <-  (mean(x) - 100)/(s/sqrt(n))
+```
+
+test statisitic is `{r} tval`
+
+::: {.border .p-3}
+```{r}
+df <- n-1
+pvaluet <-  1-pt(tval, df)
+```
+
+Since *p*-value `{r} pvaluet` \< 0.05, conclude that reject $H_0$ with a significance level $\alpha$ = 0.05, given unknown sigma.
+:::
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+reference code :
+
+```{{r}}
+##
+#### R code: analysis of the IQ score data set
+##
+#Test if the mean score is significantly greater than 100
+#(1) suppose sigma=10 is known (z-test)
+x = c(121, 98, 95, 94, 102, 106, 112, 120, 108, 109);
+xbar = mean(x);
+sigma=10;
+n = length(x);
+zval = (xbar - 100)/(sigma/sqrt(n));
+pvalue = 1-pnorm(zval)
+#(2) suppose sigma is unknown (one-sample t-test)
+s = sd(x)
+tval = (xbar - 100)/(s/sqrt(n))
+df=n-1
+pvalue = 1-pt(tval, df)
+#or use the existing R function, the default is 2-sided alternative
+# test if E(X)-100>0 (alternative)
+t.test(x-100, alternative ="greater");
+```
+:::
+
+### Type I Error & Power (Z-test)
+
+#### Example 1.1.2
+
+Refer to Example 1.1.1. Suppose $X_1,...X_n$ are $i.i.d$ from $N(\mu ,\sigma^2)$, where $\sigma$ is known. Test $H_0 : \mu = \mu_0~ versus~ H_a : \mu > \mu_0$. Suppose the rejection region is: $X > 105.2$. Calculate the Type I error of this test procedure.
+
+$\text{In general, for an upper-tailed z-test }H_0:\mu=\mu_0,\:H_a:\mu>\mu_0.$
+
+$$
+\text{For }RR=\{\bar{X}:\bar{X}>C\},
+$$
+
+$$
+\text{Type I error}=P\left(Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}>\frac{C-\mu_0}{\sigma/\sqrt{n}}\right)=1-\Phi\left(\frac{C-\mu_0}{\sigma/\sqrt{n}}\right).
+$$
+
+::: {.callout-caution collapse="true"}
+#### Answer
+
+$$
+\text{Type I error}=P\left(Z=\frac{\bar{X}-100}{10/\sqrt{n}}>\frac{105.4-100}{10/\sqrt{n}}\right)=1-\Phi\left(\frac{105.4-100}{10/\sqrt{n}}\right).
+$$
+
+```{r}
+test2 <- (105.4 - 100)/(10/sqrt(n))
+pvalue2 <- 1 - pnorm(test2)
+```
+
+so Type I error is $`{r} round(pvalue2,3)`$.
+:::
+
+Note: The above calculation holds approximately for the approximate z-test based on CLT when n is large.
+
+(Upper-tailed test) $H_0:\mu=\mu_0,~H_a:\mu>\mu_0.$ For a level $\alpha$ z-test $RR=\{\bar{X}:\bar{X}>\mu_{0}+z_{1-\alpha}*\sigma/\sqrt{n}\}$
+
+$$\text{Type I error}=P\left(Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}>z_{1-\alpha}\right)=1-\Phi\left(z_{1-\alpha}\right)=\alpha. $$
+
+Power = 1-P(Type II error): the probability of detecting the departure from the null hypothesis, i.e. the chance of rejecting $H_0$ when $H_a$ is true. This depends on how far the true parameter is away from the null hypothesis. We often fix the parameter value under $H_a$.
+
+#### Example 1.1.3
+
+Refer to Example 1.1.1. Suppose the true mean is $\mu$ = 105 (105 \> $\mu_0$ = 100 so $H_0$ is false). Derive the power of the z-test procedure (reject $H_0$ when $\bar{X}$ \> 105.2).
+
+(Upper-tailed Z-test) $H_0:\mu=\mu_0,~H_a:\mu>\mu_0,$ $RR=\{\bar{X}:\bar{X}>C\}.$ Suppose the true mean is $\mu^{\prime}>\mu_0,$
+
+$$\begin{aligned}
+Power(\mu^{\prime})~
+& =\quad P(\text{Reject }H_0|H_0\text{ is false})  \\
+&=\quad P(\bar{X}>C|\mu=\mu') \\
+&=\quad P\left\{Z=\frac{\bar{X}-\mu^{\prime}}{\sigma/\sqrt{n}}>\frac{C-\mu^{\prime}}{\sigma/\sqrt{n}}\right\}=1-\Phi\left(\frac{C-\mu^{\prime}}{\sigma/\sqrt{n}}\right).
+\end{aligned}$$
+
+```{r}
+reject_normal <- 100+qnorm(0.95)*10/sqrt(10)
+test3 <- (reject_normal - 105)/(10/sqrt(n))
+power_normal <- 1 - pnorm(test3)
+```
+
+Power = 1-P(Type II error) = $`{r} round(power_normal,3)`$
+
+### Confidence Interval
+
+Suppose $X_1,...X_n$ are $i.i.d$ from $N(\mu ,\sigma^2)$, where $\sigma$ is known. Then (1-$\alpha$) confidence interval for $\mu$ is:
+
+$$[\bar{X}-z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}},\bar{X}+z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}].$$
+
+#### Example 1.1.4
+
+For the IQ test example, verify that the 95% confidence interval for $\mu$ is:
+
+```{r}
+cat("[", mean(x) - qnorm(1-(1-q)/2)*10/sqrt(n), ",", mean(x) + qnorm(1-(1-q)/2)*10/sqrt(n), "]")
+```
+
+Note that it is not correct to say that P(100.3 \< $\mu$ \< 112.7) = 0.95. Why? In general, $$P(\bar{X}-z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}<\mu<\bar{X}+z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}})=1-\alpha$$
+
+where the lower and upper bounds are **random variables**. In the interval \[100.3, 112.7\], the values have been plugged in.
+
+## Binomial Test
+
+### Hypotheses and Test Statistic
+
+-   Assumption: suppose the random sample $X_1,...X_n$ are $i.i.d$ from a distribution with median $\theta$. Different from Section 1.1, here we do not require the distribution to be Normal.
+
+-   Null hypothesis $H_0 : \theta=\theta_0$, where $\theta_0$ is prespecified, e.g.$\theta_0=0$ corresponds to testing if the distribution is centered at 0.
+
+-   Note that if the distribution is symmetric, the $H_0$ is equivalent to test if the population mean= $\theta_0$.
+
+-   Alternative hypothesis $H_a : \theta > \theta_0$ (upper-tailed test).
+
+We consider the binomial test statistic: $$S = number~ of~ X_is~ that~ exceed~ \mu_0$$
+
+That is, $S$ is the total number of observations out of n that exceed the hypothesized median $\mu_0$. In another word,
+
+$$ S = \sum_{i=1}^{n} I(X_i > \mu_0);$$ where $I(A)$ is the indicator function that takes value 1 if the statement $A$ holds and zero otherwise.
+
+In $S$, we care about only the signs of $X_i - \mu_0$ (whether $X_i$ is greater than $\mu_0$ or not), but not the magnitudes of $X_i - \mu_0$. Therefore, the Binomial test is also called "sign test".
+
+To determine the rejection region and calculate the *p*-value, we need know the distribution of the test statistic $S$ when $H_0$ is true.
+
+**Distribution of** $S$ under $H_0$: when $H_0$ is true, we would expect half of the data are greater than $\theta_0$, and half are smaller than $\theta_0$.
+
+Therefore,
+
+$$S ∼ Binomial(n, p = 0.5)~ under ~H_0;$$
+
+irrespective of the underlined distribution of $X_i's$. Here $p$ is the population proportion of $X_i > \mu_0$. Thus, testing $H_0 : \theta=\theta_0$ versus $H_a : \theta>\theta_0$ is equivalent to testing
+
+$$H_0 : p = 0.5~ versus~ H_a : p > 0.5~.$$
+
+### Rejection Region, Type I Error and Power
+
+-   For the upper-tailed test, a larger value of $S$ provides more contradiction of $H_0$.
+
+-   Rejection region: reject $H_0$ when $S \ge c_{val}$, where $c_{val}$ is the *critical value* that is determined to control Type I error at level $\alpha$, that is, find $c_{val}$ such that $$P(S\geq c_{val}\,|H_0)=\sum_{k=c_{val}}^n\binom nk0.5^n=\alpha.$$
+
+-   Since Binomial is a discrete distribution, we may not be able to find an integer $c_{val}$ to make the Type I error equal $\alpha$ exactly. In practice, we find an integer $c_{val}$ such that the Type I error is as close to $\alpha$ (no larger than) as possible.
+
+Large Sample Approximation:
+
+For large n, by Central Limit Theorem, we know that approximately
+
+$$S ∼ N(0.5n, 0.25n) ~under~ H_0.$$ Therefore, for large n, the approximate rejection region is:
+
+$$S ≥ 0.5n + z_{1-\alpha}\sqrt{0.25n},$$ which has Type I error approximately equal $\alpha$.
+
+#### Example 1.2.1
+
+Refer to Example 1.1.1. The observed IQ scores:
+
+$$121; 98; 95; 94; 102; 106; 112; 120; 108; 109$$
+
+Test $H_0 : \theta=100$ versus $H_a : \theta>100$. Suppose the rejection region is: reject when $S ≥ 8$.
+
+1.  Calculate the Type I error of this test procedure.
+
+2.  Calculate the Type I error using the Normal approximation (based on CLT).
+
+::: {.callout-caution collapse="true"}
+#### Answer
+
+```{r}
+type.1.error <- sum(dbinom(8:10,10,0.5))
+```
+
+Type I error: $$P(RR|H_0)=P(S \ge 8|\theta=100)=\sum_{k=8}^{10}\binom {k}{10}0.5^{10}=`{r} type.1.error`$$
+
+Using the Normal approximation:
+
+```{r}
+n <- 10
+mean_s <- 0.5*n
+sd_s <- sqrt(0.5*(1-0.5)*n)
+type.1.error.normal <- 1-pnorm((8-mean_s)/(sd_s))
+```
+
+Type I error: $$P(RR|H_0)=P(S \ge 8|\theta=100)=P\left(\frac{S-5}{\sqrt{2.5}} \ge \frac{8-5}{\sqrt{2.5}} \right)=`{r} type.1.error.normal`$$
+:::
+
+Power calculation: Suppose $X_1,...X_n$ are $i.i.d$ with median $\theta$ and variance $\sigma^2$.
+
+-   $H_0 : \theta = \theta_0~ versus~ H_a : \theta > \theta_0~.$
+
+-   Rejection region: $S ≥ c_{val}$.
+
+-   Suppose the true median is $\theta' = \theta_0$, what is the power of the test procedure?
+
+::: {#tip-p_prime .callout-tip}
+####### $p\prime$
+
+-   Under $H_a : S ∼ Binomial(n, p')$, where
+
+$$p\prime = P (X > \theta_0)> 0.5~~.$$
+:::
+
+::: callout-note
+We need know/assume the distribution of $X_i$ in order to obtain $p'$ and calculate the power.
+:::
+
+Suppose $p'$ is already calculated. Then the power of the sign test is:
+
+$$\begin{aligned}
+\beta(\theta^{\prime})& =\quad P\{S\geq c_{val}|S\sim Binomial(n,p')\}  \\
+&=\quad1-B(c_{val}-1;n,p^{\prime})\quad\text{(exact, small sample)} \\
+&\approx\quad1-\Phi\left\{\frac{c_{val}-np^{\prime}}{\sqrt{np^{\prime}(1-p^{\prime})}}\right\}\text{(large-sample)}.
+\end{aligned}$$
+
+#### Example 1.2.2
+
+Suppose $X_1,...X_{10}$ are $i.i.d \sim N(\theta,10^2).$ Test $H_0 : \theta = 100$ versus $H_a : \theta > 100$. Consider two tests:
+
+(A) z-test: reject $H_0$ when $\bar{X} >100 + 1.645 × 10/\sqrt{10} = 105.2$ (Type I error: 0.05)
+
+(B) Binomial test: reject $H_0$ when $S ≥ 8$ (Type I error: 0.055)
+
+Suppose the truth is $\theta= 105$. Compare the power of the two tests for detecting such a departure from $H_0$. (Refer to Example 1.1.3 for the power of the z-test.)
+
+::: {.callout-caution collapse="true"}
+#### Answer
+
+First we calculate the $p^{\prime}$: @tip-p_prime
+
+```{r}
+p_prime <- 1-pnorm((100-105)/(10))
+```
+
+$p^{\prime}=`{r} p_prime`$
+
+and the power of Binomial test:
+
+```{r}
+power_bi <- sum(dbinom(8:10,10,p_prime))
+```
+
+the power of Binomial test $=`{r} power_bi`$, the power of z-test is $`{r} power_normal`$.
+:::
+
+#### Example 1.2.3
+
+Suppose $X_i$ are $i.i.d$ from the *Laplace* distribution with mean 105 and variance 100 with *pdf*
+
+$$f(x)=\frac1{10\sqrt{2}}\exp\left\{-\frac{|x-105|}{10/\sqrt{2}}\right\},\quad-\infty<x<+\infty.$$
+
+Laplace distribution is symmetric about the mean, but it has a fatter tail than the normal distribution. Find the power of the Binomial test.
+
+::: {.callout-caution collapse="true"}
+#### Answer
+
+First we calculate the $p^{\prime}$: @tip-p_prime
+
+```{r}
+#| warning: false
+#| message: false
+# install.packages('VGAM')
+library(VGAM); 
+p_prime_laplace <- 1 - plaplace(100,105, 10/sqrt(2))
+```
+
+$p^{\prime}=`{r} p_prime_laplace`$
+
+and the power of Laplace test:
+
+```{r}
+power_bi_laplace <- sum(dbinom(8:10,10,p_prime_laplace))
+```
+
+the power of Binomial test is $`{r} power_bi_laplace`$, larger than  z-test $(= `{r} power_normal`)$.
+
+Binomial test is more powerful than z-test for heavy-tailed distributions!!
+:::
+
+Sample size determination: For the large sample level $\alpha$ sign test, $c_{val} = 0.5n + z_{1-\alpha}\sqrt{0.25n}.$ In order to achieve power $\beta$, say, 90%, what is the smallest n required?
+
+We need n such that
+
+$$\beta(\theta')\quad\approx\quad1-\Phi\left\{\frac{c_{val}-np'}{\sqrt{np'(1-p')}}\right\}\geq\beta.$$
+
+That is, we need
+
+$$\begin{aligned}
+z_{1-\beta} &\ge\frac{0.5n+z_{1-\alpha}\sqrt{0.25n}-np^{\prime}}{\sqrt{np^{\prime}(1-p^{\prime})}} \\
+\Rightarrow\quad n&\geq\frac{\{0.5z_{1-\alpha}-z_{1-\beta}\sqrt{p^{\prime}(1-p^{\prime})}\}^2}{(0.5-p^{\prime})^2}\text{ (round up).}\end{aligned}$$
+
+#### Example 1.2.4 
+
+(Refer to Example 1.2.2) Desired power $\beta = 0.475$, calculate the minimum sample size required for the Binomial test.
+
+::: {.callout-caution collapse="true"}
+#### Answer
+
+```{r}
+beta <- 0.475
+size_require <- (0.5*qnorm(0.95)-qnorm(1-beta)*sqrt(p_prime*(1-p_prime)))**2/(0.5-p_prime)**2
+```
+The minimum sample size required for the Binomial test is `{r} ceiling(size_require)`
+
+
+:::
+
+Calcuate the power of the two tests using simulation:
+```{r}
+n=10
+reject.ztest = reject.binom = 0
+reject.ztest.laplace = reject.binom.laplace = 0
+
+for(j in 1:1000){
+x = rnorm(n, 105, 10)
+y = rlaplace(n, location=105, scale=10/sqrt(2))
+
+xbar = mean(x)
+ybar = mean(y)
+
+S.nor = sum(x>100)
+S.lap = sum(y>100)
+
+reject.ztest = reject.ztest + 1*(xbar > 105.2)
+reject.binom = reject.binom + 1*(S.nor>=8)
+
+reject.ztest.laplace = reject.ztest.laplace + 1*(ybar > 105.2)
+reject.binom.laplace = reject.binom.laplace + 1*(S.lap>=8)
+}
+```
+The power of Binomial test is $`{r} reject.binom/1000`$, z-test is $`{r} reject.ztest/1000`$.
+
+When $X_i$ follow $Laplace(105,10/\sqrt{2})$ (variance is $100=scale^2$), the power of Binomial test is $`{r} reject.binom.laplace/1000`$, z-test is $`{r} reject.ztest.laplace/1000`$.
+
+### Hypothesis Testing: *p*-value
+
+-   The *p*-value is the probability of obtaining a test statistic value as extreme as the observed value, calculated assuming $H_0$ is true.
+
+-   Suppose $Y \sim Binomial(n, p)$, then the probability mass function of Y is:
+冲冲冲
