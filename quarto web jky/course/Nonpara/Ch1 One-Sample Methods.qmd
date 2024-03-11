@@ -585,4 +585,3 @@ When $X_i$ follow $Laplace(105,10/\sqrt{2})$ (variance is $100=scale^2$), the po
 -   The *p*-value is the probability of obtaining a test statistic value as extreme as the observed value, calculated assuming $H_0$ is true.
 
 -   Suppose $Y \sim Binomial(n, p)$, then the probability mass function of Y is:
-冲冲冲

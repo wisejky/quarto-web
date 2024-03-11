@@ -1,7 +1,8 @@
 {
-  "hash": "631eecef26c775488a337ef9a5d6615e",
+  "hash": "f00ab002e2a3a40f27a6cbba5adbe96e",
   "result": {
-    "markdown": "---\ntitle: \"test\"\n---\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n\n\n\n\n::: {#tip-example .callout-tip}\n## Cross-Referencing a Tip\n\nAdd an ID starting with `#tip-` to reference a tip.\n:::\n\nSee @example...",
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"test\"\n---\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\n\n\n::: {#tip-example .callout-tip}\n## Cross-Referencing a Tip\n\nAdd an ID starting with `#tip-` to reference a tip.\n:::\n\nSee @example...",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

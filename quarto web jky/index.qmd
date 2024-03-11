@@ -11,7 +11,7 @@ about:
     #- icon: github
     #  text: Github
     #  href: https://github.com
-  # quarto publish netlify
+  #quarto publish netlify
 ---
 
 ::: {#hero-heading}
