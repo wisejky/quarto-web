@@ -6,20 +6,20 @@
       version="2.0">
 <channel>
 <title>Jiang Kunyi</title>
-<link>https://wisejky.netlify.app/course/Nonparametric Econometrics.html</link>
-<atom:link href="https://wisejky.netlify.app/course/Nonparametric Econometrics.xml" rel="self" type="application/rss+xml"/>
+<link>https://enchanting-medovik-28255b.netlify.app/course/Nonparametric Econometrics.html</link>
+<atom:link href="https://enchanting-medovik-28255b.netlify.app/course/Nonparametric Econometrics.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>https://wisejky.netlify.app/images/hero_right.png</url>
+<url>https://enchanting-medovik-28255b.netlify.app/images/hero_right.png</url>
 <title>Jiang Kunyi</title>
-<link>https://wisejky.netlify.app/course/Nonparametric Econometrics.html</link>
+<link>https://enchanting-medovik-28255b.netlify.app/course/Nonparametric Econometrics.html</link>
 </image>
 <generator>quarto-1.4.551</generator>
 <lastBuildDate>Mon, 11 Mar 2024 15:51:52 GMT</lastBuildDate>
 <item>
   <title>Nonparametric Econometrics Ch1</title>
   <dc:creator>Jiang Kunyi</dc:creator>
-  <link>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methods.html</link>
+  <link>https://enchanting-medovik-28255b.netlify.app/course/Nonpara/Ch1 One-Sample Methods.html</link>
   <description><![CDATA[ 
 
 
@@ -1196,8 +1196,8 @@ background-color: null;
 font-style: inherit;">8</span>)</span>
 <span id="cb22-20">}</span></code></pre></div>
 </div>
-<p>The power of Binomial test is <img src="https://latex.codecogs.com/png.latex?0.367">, z-test is <img src="https://latex.codecogs.com/png.latex?0.485">.</p>
-<p>When <img src="https://latex.codecogs.com/png.latex?X_i"> follow <img src="https://latex.codecogs.com/png.latex?Laplace(105,10/%5Csqrt%7B2%7D)"> (variance is <img src="https://latex.codecogs.com/png.latex?100=scale%5E2">), the power of Binomial test is <img src="https://latex.codecogs.com/png.latex?0.515">, z-test is <img src="https://latex.codecogs.com/png.latex?0.448">.</p>
+<p>The power of Binomial test is <img src="https://latex.codecogs.com/png.latex?0.363">, z-test is <img src="https://latex.codecogs.com/png.latex?0.508">.</p>
+<p>When <img src="https://latex.codecogs.com/png.latex?X_i"> follow <img src="https://latex.codecogs.com/png.latex?Laplace(105,10/%5Csqrt%7B2%7D)"> (variance is <img src="https://latex.codecogs.com/png.latex?100=scale%5E2">), the power of Binomial test is <img src="https://latex.codecogs.com/png.latex?0.529">, z-test is <img src="https://latex.codecogs.com/png.latex?0.463">.</p>
 </section>
 </section>
 <section id="hypothesis-testing-p-value" class="level3" data-number="1.2.3">
@@ -1217,14 +1217,14 @@ font-style: inherit;">8</span>)</span>
 
  ]]></description>
   <category>Nonpara</category>
-  <guid>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methods.html</guid>
+  <guid>https://enchanting-medovik-28255b.netlify.app/course/Nonpara/Ch1 One-Sample Methods.html</guid>
   <pubDate>Mon, 11 Mar 2024 15:51:52 GMT</pubDate>
-  <media:content url="https://wisejky.netlify.app/course/Nonpara/images/hero_right.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://enchanting-medovik-28255b.netlify.app/course/Nonpara/images/hero_right.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Nonparametric Econometrics Ch1</title>
   <dc:creator>Jiang Kunyi</dc:creator>
-  <link>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methodstest.html</link>
+  <link>https://enchanting-medovik-28255b.netlify.app/course/Nonpara/Ch1 One-Sample Methodstest.html</link>
   <description><![CDATA[ 
 
 
@@ -1447,9 +1447,9 @@ mean of x
 
 
  ]]></description>
-  <guid>https://wisejky.netlify.app/course/Nonpara/Ch1 One-Sample Methodstest.html</guid>
+  <guid>https://enchanting-medovik-28255b.netlify.app/course/Nonpara/Ch1 One-Sample Methodstest.html</guid>
   <pubDate>Invalid Date</pubDate>
-  <media:content url="https://wisejky.netlify.app/images/hero_right.png" medium="image" type="image/png"/>
+  <media:content url="https://enchanting-medovik-28255b.netlify.app/images/hero_right.png" medium="image" type="image/png"/>
 </item>
 </channel>
 </rss>

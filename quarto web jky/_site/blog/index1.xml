@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Jiang Kunyi</title>
-<link>https://enchanting-medovik-28255b.netlify.app/blog/</link>
-<atom:link href="https://enchanting-medovik-28255b.netlify.app/blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://enchanting-medovik-28255b.netlify.app/blog/index1.html</link>
+<atom:link href="https://enchanting-medovik-28255b.netlify.app/blog/index1.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Mon, 11 Mar 2024 17:18:57 GMT</lastBuildDate>
+<lastBuildDate>Mon, 11 Mar 2024 17:18:58 GMT</lastBuildDate>
 <item>
   <title>Blog posts</title>
-  <link>https://enchanting-medovik-28255b.netlify.app/blog/index1.html</link>
+  <link>https://enchanting-medovik-28255b.netlify.app/blog/</link>
   <description><![CDATA[ 
 
 
@@ -33,23 +33,23 @@
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1707861113000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="thumbnail">
-<p><a href="../blog/index.html" class="no-external"></a></p><a href="../blog/index.html" class="no-external">
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:blog/index.html -->
-</a><p><a href="../blog/index.html" class="no-external"></a></p>
+<p><a href="../blog/index1.html" class="no-external"></a></p><a href="../blog/index1.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:blog/index1.html -->
+</a><p><a href="../blog/index1.html" class="no-external"></a></p>
 </div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../blog/index.html" class="no-external">Blog posts</a>
+<a href="../blog/index1.html" class="no-external">Blog posts</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../blog/index.html" class="no-external"></a>
+<a href="../blog/index1.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<a href="../blog/index.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:blog/index.html --></a>
+<a href="../blog/index1.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:blog/index1.html --></a>
 </div>
 </div>
 <div class="metadata">
-<p><a href="../blog/index.html" class="no-external"></a></p><a href="../blog/index.html" class="no-external">
+<p><a href="../blog/index1.html" class="no-external"></a></p><a href="../blog/index1.html" class="no-external">
 </a>
 </div>
 </div>
@@ -58,8 +58,8 @@
 No matching items
 </div>
 </div> ]]></description>
-  <guid>https://enchanting-medovik-28255b.netlify.app/blog/index1.html</guid>
-  <pubDate>Mon, 11 Mar 2024 17:18:57 GMT</pubDate>
+  <guid>https://enchanting-medovik-28255b.netlify.app/blog/</guid>
+  <pubDate>Mon, 11 Mar 2024 17:18:58 GMT</pubDate>
 </item>
 </channel>
 </rss>
